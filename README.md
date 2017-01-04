@@ -1,6 +1,15 @@
 # hks-flask
 
-#### Deploy
+#### Setup Heroku
+```
+heroku login
+heroku apps:create
+git remote -v
+git push heroku master
+heroku logs
+```
+
+#### Setup EC2
 - Go to https://console.aws.amazon.com/console/home.
 - Click on EC2 or go to https://console.aws.amazon.com/ec2/v2/home?region=us-east-1.
 - Click Launch Instance.
@@ -24,4 +33,12 @@
   chmod 600 ~/Desktop/Credentials/hks.pem
   cat ~/.ssh/id_rsa.pub | ssh -i ~/Desktop/Credentials/hks.pem ubuntu@52.90.42.210 "cat - >> ~/.ssh/authorized_keys"
   ssh ubuntu@52.90.42.210
+  sudo apt-get update
+  sudo apt-get install python python-pip
+  git config --global user.email "YOUR@EMAIL.COM"
+  git config --global user.name "First Last"
+  pip install --upgrade pip
+  cd ~
+  git clone git@github.com:dmil/hks-flask.git
+  pip install -r requirements.txt
   ```
